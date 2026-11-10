@@ -1,0 +1,8 @@
+{
+    // Hide build output folders in the Explorer so only the code you write is visible.
+    // They still exist on disk; delete these lines to show them again.
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true
+    }
+}

@@ -1,0 +1,51 @@
+@model List<Book>
+
+
+<h1>Books</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Description</th>
+            <th>Author</th>
+            <th>Date Published</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th></th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach(var bk in Model)
+        {
+            <tr>
+                <td>@bk.Title</td>
+                <td>@bk.Description</td>
+                <td>@bk.Author</td>
+                <td>@bk.DatePublished.ToShortDateString()</td>
+                <td>@bk.Genre</td>
+                <td>@string.Format("{0:c}", bk.Price)</td>
+
+                <td>
+
+                    <a asp-controller="Book" asp-action="Details" asp-route-id="@bk.BookId">View Details</a>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<div class="container">
+
+    <div class="text-end">
+        <a asp-controller="Book" asp-action="Create" class="btn btn-primary">Create New Book</a>
+    </div>
+
+</div>

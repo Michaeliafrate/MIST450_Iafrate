@@ -1,55 +1,16 @@
-# Prerequisites
-*.d
+# Build output
+bin/
+obj/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Local settings with the real database password (kept on this computer only)
+**/appsettings.Development.json
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# debug information files
-*.dwo
+# OS files
+Thumbs.db
+.DS_Store
