@@ -50,5 +50,30 @@ namespace BooksMVC_MIST450sec01.Controllers
 
             return View(retrievedBook);
         }
+
+
+        public IActionResult Edit(int id)
+        {
+            //talk to the database and fetch the book that the user would like to edit
+            var retrievedBook = _context.Books.Find(id);
+
+            return View(retrievedBook);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, [Bind("BookId, Description, Title, Author, DatePublished, Price, Genre")] Book updatedBook)
+        {
+            //talk to the database and save the data that the user has provided
+            if (ModelState.IsValid)
+            {
+                _context.Books.Update(updatedBook);
+
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

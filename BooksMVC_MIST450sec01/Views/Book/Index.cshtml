@@ -23,7 +23,11 @@
         @foreach(var bk in Model)
         {
             <tr>
-                <td>@bk.Title</td>
+                <td>
+                    <a asp-controller="Book" asp-action="Details" asp-route-id="@bk.BookId">
+                        @bk.Title
+                    </a>
+                </td>
                 <td>@bk.Description</td>
                 <td>@bk.Author</td>
                 <td>@bk.DatePublished.ToShortDateString()</td>
@@ -32,7 +36,8 @@
 
                 <td>
 
-                    <a asp-controller="Book" asp-action="Details" asp-route-id="@bk.BookId">View Details</a>
+                    <a asp-controller="Book" asp-action="Details" asp-route-id="@bk.BookId">View Details</a> |
+                    <a asp-controller="Book" asp-action="Edit" asp-route-id="@bk.BookId">Edit</a>
 
                 </td>
             </tr>
